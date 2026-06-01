@@ -20,3 +20,9 @@ def compute_sam(df_porte_setor, setores, porte_col="porte",
     mask = df_porte_setor[porte_col].isin(PME_PORTES) & df_porte_setor[setor_col].isin(setores)
     tab = df_porte_setor[mask].groupby(setor_col)[value_col].sum()
     return pd.DataFrame({"setor": tab.index, "sam": tab.values})
+
+
+def compute_som(sam_total, taxas):
+    """SOM = SAM_total × taxa, um registro por cenário, ordenado crescente."""
+    rows = [{"cenario": c, "taxa": t, "som": sam_total * t} for c, t in taxas.items()]
+    return pd.DataFrame(rows).sort_values("som").reset_index(drop=True)

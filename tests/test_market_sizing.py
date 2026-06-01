@@ -33,3 +33,13 @@ def test_sam_filtra_setores_e_pme():
     assert total == 525.0
     assert set(sam["setor"]) == {"Comércio", "Serviços", "Indústria"}
     assert "Agricultura" not in set(sam["setor"])
+
+
+def test_som_aplica_taxas_por_cenario():
+    taxas = {"pessimista": 0.01, "base": 0.03, "otimista": 0.05}
+    som = ms.compute_som(1000.0, taxas)
+    d = dict(zip(som["cenario"], som["som"]))
+    assert d["pessimista"] == 10.0
+    assert d["base"] == 30.0
+    assert d["otimista"] == 50.0
+    assert list(som["som"]) == sorted(som["som"])
