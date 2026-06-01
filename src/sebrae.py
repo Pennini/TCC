@@ -23,3 +23,10 @@ def to_df(raw, key):
     if key not in raw:
         raise KeyError(f"Dataset '{key}' não encontrado. Disponíveis: {list(raw)}")
     return pd.DataFrame(raw[key]["data"])
+
+
+def clean_portes(df, col="Company Size Sebrae"):
+    """Adiciona coluna `porte` normalizada (MEI/ME/EPP/Outros)."""
+    out = df.copy()
+    out["porte"] = out[col].map(PORTE_MAP)
+    return out
