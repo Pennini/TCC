@@ -1,12 +1,12 @@
 {
   "RF__Establishments__Sebrae Client Indicator,Grande Sector": {
     "annotations": {
-      "topic": "RFB",
       "subtopic": "Hidden",
-      "table": "Estabelecimentos",
-      "source_name": "RF",
+      "topic": "RFB",
       "source_description": "Receita Federal",
-      "source_link": "/about#rf"
+      "source_name": "RF",
+      "source_link": "/about#rf",
+      "table": "Estabelecimentos"
     },
     "page": {
       "limit": 0,
@@ -81,12 +81,12 @@
   },
   "RF__Establishments__Legal Nature": {
     "annotations": {
-      "topic": "RFB",
       "subtopic": "Hidden",
-      "table": "Estabelecimentos",
-      "source_name": "RF",
+      "topic": "RFB",
       "source_description": "Receita Federal",
-      "source_link": "/about#rf"
+      "source_name": "RF",
+      "source_link": "/about#rf",
+      "table": "Estabelecimentos"
     },
     "page": {
       "limit": 0,
@@ -609,12 +609,12 @@
   },
   "RF__Establishments__Open Activity Year,Company Size Sebrae": {
     "annotations": {
-      "source_link": "/about#rf",
+      "source_name": "RF",
+      "subtopic": "Hidden",
       "topic": "RFB",
       "table": "Estabelecimentos",
-      "source_name": "RF",
-      "source_description": "Receita Federal",
-      "subtopic": "Hidden"
+      "source_link": "/about#rf",
+      "source_description": "Receita Federal"
     },
     "page": {
       "limit": 0,
@@ -1760,12 +1760,12 @@
   },
   "RF__Establishments__Grande Sector,Company Size Sebrae": {
     "annotations": {
-      "topic": "RFB",
       "subtopic": "Hidden",
-      "table": "Estabelecimentos",
-      "source_name": "RF",
+      "topic": "RFB",
       "source_description": "Receita Federal",
-      "source_link": "/about#rf"
+      "source_name": "RF",
+      "source_link": "/about#rf",
+      "table": "Estabelecimentos"
     },
     "page": {
       "limit": 0,
@@ -1938,12 +1938,12 @@
   },
   "CAGED_movements__Movement Balance,Admissions,Resignations__Grande Sector": {
     "annotations": {
-      "subtopic": "Hidden",
       "topic": "CAGED",
-      "source_description": "Cadastro Geral de Empregados e Desempregados",
+      "subtopic": "Hidden",
+      "table": "Movimentação",
       "source_name": "CAGED",
-      "source_link": "/about#caged",
-      "table": "Movimentação"
+      "source_description": "Cadastro Geral de Empregados e Desempregados",
+      "source_link": "/about#caged"
     },
     "page": {
       "limit": 0,
@@ -1997,12 +1997,12 @@
   },
   "RAIS_workers__Remuneration Avg Nominal,Workers__Grande Sector,Year": {
     "annotations": {
-      "table": "Vinculos",
       "subtopic": "Hidden",
-      "source_name": "RAIS",
       "topic": "RAIS",
+      "source_description": "Relação Anual de Informações Sociais",
+      "source_name": "RAIS",
       "source_link": "/about#rais",
-      "source_description": "Relação Anual de Informações Sociais"
+      "table": "Vinculos"
     },
     "page": {
       "limit": 0,
@@ -2273,12 +2273,12 @@
   },
   "RAIS_workers__Workers,Remuneration Avg Nominal__Year,Subgroup,Active worker indicator": {
     "annotations": {
-      "source_link": "/about#rais",
+      "subtopic": "Hidden",
       "topic": "RAIS",
-      "table": "Vinculos",
-      "source_name": "RAIS",
       "source_description": "Relação Anual de Informações Sociais",
-      "subtopic": "Hidden"
+      "source_name": "RAIS",
+      "source_link": "/about#rais",
+      "table": "Vinculos"
     },
     "page": {
       "limit": 0,
@@ -8230,12 +8230,12 @@
   },
   "IBGE_Censo_Sexo_Faixa_Etaria__Population__Age Group,Sex": {
     "annotations": {
-      "subtopic": "Hidden",
       "topic": "IBGE - Censo",
-      "source_description": "Instituto Brasileiro de Geografia e Estatística - Censo Demográfico",
+      "subtopic": "Hidden",
+      "table": "Pop por Sexo e Faixa Etária",
       "source_name": "IBGE - Censo",
-      "source_link": "/about#ibgecenso",
-      "table": "Pop por Sexo e Faixa Etária"
+      "source_description": "Instituto Brasileiro de Geografia e Estatística - Censo Demográfico",
+      "source_link": "/about#ibgecenso"
     },
     "page": {
       "limit": 0,
@@ -8548,12 +8548,12 @@
   },
   "IBGE_Censo_Pop_Sit__Population__Year,Municipality": {
     "annotations": {
-      "topic": "IBGE - Censo",
       "subtopic": "Hidden",
-      "table": "Pop por Situação Domiciliar",
-      "source_name": "IBGE - Censo",
+      "topic": "IBGE - Censo",
       "source_description": "Instituto Brasileiro de Geografia e Estatística - Censo Demográfico",
-      "source_link": "/about#ibgecenso"
+      "source_name": "IBGE - Censo",
+      "source_link": "/about#ibgecenso",
+      "table": "Pop por Situação Domiciliar"
     },
     "page": {
       "limit": 0,
@@ -8607,12 +8607,12 @@
   },
   "PNUD_Atlas_IDHM__Gini__Year,Municipality": {
     "annotations": {
+      "source_name": "PNUD",
       "subtopic": "Hidden",
       "topic": "PNUD",
-      "source_description": "Programa das Nações Unidas para o Desenvolvimento",
-      "source_name": "PNUD",
+      "table": "PNUD - Atlas IDHM",
       "source_link": "/about#pnudatlas",
-      "table": "PNUD - Atlas IDHM"
+      "source_description": "Programa das Nações Unidas para o Desenvolvimento"
     },
     "page": {
       "limit": 0,
@@ -8642,12 +8642,12 @@
   },
   "INEP_Censo_Taxas_Basica__Age-Grade Distortion Rate__Year,Education Level": {
     "annotations": {
-      "subtopic": "Hidden",
       "topic": "INEP",
-      "source_description": "Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira",
+      "subtopic": "Hidden",
+      "table": "Taxas - Educação Básica",
       "source_name": "INEP",
-      "source_link": "/about#inep",
-      "table": "Taxas - Educação Básica"
+      "source_description": "Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira",
+      "source_link": "/about#inep"
     },
     "page": {
       "limit": 0,
