@@ -49,3 +49,14 @@ def test_to_revenue_anualiza_por_preco():
     rev = ms.to_revenue(100.0, [50.0, 100.0])
     assert rev[50.0] == 100.0 * 50.0 * 12
     assert rev[100.0] == 100.0 * 100.0 * 12
+
+
+def test_funil_monotonico_tam_maior_igual_sam_maior_igual_som():
+    df_ps = _df_porte_setor()
+    df_porte = df_ps.groupby("porte", as_index=False)["Establishments"].sum()
+
+    tam = ms.compute_tam(df_porte)["tam_pme"]
+    sam = ms.compute_sam(df_ps, SAM_SETORES)["sam"].sum()
+    som = ms.compute_som(sam, {"base": 0.03})["som"].iloc[0]
+
+    assert tam >= sam >= som
