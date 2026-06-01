@@ -74,8 +74,9 @@ de distribuição de porte uniforme entre setores.
 
 ### 2.4 Encoding
 
-O JSON salvo contém mojibake (`Ind�stria`, `S�o Paulo`) nas colunas de texto. A limpeza
-aplica `fix_encoding` em toda carga de DataFrame.
+O JSON está em UTF-8 correto (`Indústria` = `0xfa`/ú, `São Paulo` = `0xe3`/ã). O `�` visto
+em terminal é apenas artefato de exibição (console Windows), não corrupção dos dados.
+**Nenhum tratamento de encoding é necessário.**
 
 ---
 
@@ -107,7 +108,6 @@ funções é DataFrame do pandas.
 |--------|------------------|
 | `load_raw(path) -> dict`          | lê `sebrae.json` |
 | `to_df(raw, key) -> DataFrame`    | extrai `data` de um dataset; erro claro se chave ausente |
-| `fix_encoding(df) -> DataFrame`   | corrige mojibake nas colunas de texto |
 | `clean_portes(df) -> DataFrame`   | normaliza rótulo de porte → `MEI / ME / EPP / Outros` |
 | `SECTOR_MAP`, `PORTE_MAP`         | constantes de mapeamento de IDs/rótulos |
 
@@ -182,12 +182,11 @@ Marcadas no notebook e no módulo como `# TODO calibrar`. **Não há valores fix
 | `test_som_cenarios`       | SOM = SAM×taxa; pess < base < otim |
 | `test_to_revenue`         | nº×preço×12; sensibilidade retorna grade |
 | `test_funil_monotonico`   | invariante TAM ≥ SAM ≥ SOM |
-| `test_to_df_*` / `test_fix_encoding` | parse extrai `data`; mojibake corrigido (fixture mini-JSON) |
+| `test_to_df_*` / `test_clean_portes` | parse extrai `data`; rótulos de porte normalizados (fixture mini-JSON) |
 
 **Robustez adicional:**
 - `to_df` levanta erro claro para chave ausente.
 - Sanity check no notebook: soma do SAM por setor ≈ totais de RF setor.
-- `fix_encoding` aplicado em toda carga.
 
 ---
 
