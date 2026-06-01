@@ -141,6 +141,12 @@ Premissas (taxas, preços) entram como **parâmetros**, nunca hardcoded.
 
 ### Bloco B — TAM/SAM/SOM
 
+> **Consistência de universo:** TAM e SAM derivam do **mesmo** dataset `RF porte×setor`
+> (universo completo, sem filtro de ano). O dataset `RF porte×ano` é filtrado por ano de
+> abertura ≥ 1980 e exclui empresas sem ano informado, então seu total é menor — usá-lo no
+> TAM violaria o invariante TAM ≥ SAM. `porte×ano` serve **apenas** para a curva temporal
+> de aberturas (Bloco A). Um `assert tam >= sam` no notebook protege o invariante.
+
 - **TAM** = MEI+ME+EPP ativas em SP (nº + R$).
 - **SAM** = PME em Comércio + Serviços + Indústria (nº + R$).
 - **SOM** = SAM × {pessimista, base, otimista} (nº + R$).
