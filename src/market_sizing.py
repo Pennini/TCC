@@ -26,3 +26,8 @@ def compute_som(sam_total, taxas):
     """SOM = SAM_total × taxa, um registro por cenário, ordenado crescente."""
     rows = [{"cenario": c, "taxa": t, "som": sam_total * t} for c, t in taxas.items()]
     return pd.DataFrame(rows).sort_values("som").reset_index(drop=True)
+
+
+def to_revenue(n_empresas, precos_mensais):
+    """Receita potencial anual = nº × preço/mês × 12, para cada preço (sensibilidade)."""
+    return {p: n_empresas * p * 12 for p in precos_mensais}

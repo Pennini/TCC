@@ -43,3 +43,9 @@ def test_som_aplica_taxas_por_cenario():
     assert d["base"] == 30.0
     assert d["otimista"] == 50.0
     assert list(som["som"]) == sorted(som["som"])
+
+
+def test_to_revenue_anualiza_por_preco():
+    rev = ms.to_revenue(100.0, [50.0, 100.0])
+    assert rev[50.0] == 100.0 * 50.0 * 12
+    assert rev[100.0] == 100.0 * 100.0 * 12
