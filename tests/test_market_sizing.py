@@ -14,3 +14,22 @@ def test_tam_soma_apenas_pme():
     assert res["tam_pme"] == 165.0
     assert res["outros"] == 30.0
     assert res["por_porte"]["MEI"] == 105.0
+
+
+from src.sebrae import SAM_SETORES
+
+
+def _df_porte_setor():
+    return pd.DataFrame({
+        "Grande Sector": ["Comércio", "Serviços", "Indústria", "Agricultura", "Comércio"],
+        "porte": ["ME", "MEI", "EPP", "ME", "Outros"],
+        "Establishments": [200.0, 300.0, 25.0, 50.0, 40.0],
+    })
+
+
+def test_sam_filtra_setores_e_pme():
+    sam = ms.compute_sam(_df_porte_setor(), SAM_SETORES)
+    total = sam["sam"].sum()
+    assert total == 525.0
+    assert set(sam["setor"]) == {"Comércio", "Serviços", "Indústria"}
+    assert "Agricultura" not in set(sam["setor"])
