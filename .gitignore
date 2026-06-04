@@ -216,3 +216,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+data/raw/
+
+# Large derived dataset (685M, exceeds GitHub 100MB limit)
+data/interim/aneel_eletropaulo.csv
